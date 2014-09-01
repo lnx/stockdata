@@ -85,8 +85,8 @@ public class InstHolding {
 	}
 
 	public String toString() {
-		return quarter + " " + code + " " + stockName + " " + instNumber + " " + instNumberIncrease + " " + holdingRatio + " " + holdingRatioIncrease
-				+ " " + aSharesRatio + " " + aSharesRatioIncrease;
+		return quarter + ", " + code + ", " + stockName + ", " + instNumber + ", " + instNumberIncrease + ", " + holdingRatio + ", "
+				+ holdingRatioIncrease + ", " + aSharesRatio + ", " + aSharesRatioIncrease;
 	}
 
 }

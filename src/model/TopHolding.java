@@ -85,8 +85,8 @@ public class TopHolding {
 	}
 
 	public String toString() {
-		return quarter + " " + code + " " + stockName + " " + instNumber + " " + holdingNumber + " " + aSharesRatio + " " + holdingIncrease + " "
-				+ holdingRatio + " " + preInstNumber;
+		return quarter + ", " + code + ", " + stockName + ", " + instNumber + ", " + holdingNumber + ", " + aSharesRatio + ", " + holdingIncrease
+				+ ", " + holdingRatio + ", " + preInstNumber;
 	}
 
 }

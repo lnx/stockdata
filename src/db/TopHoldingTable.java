@@ -2,7 +2,10 @@ package db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.TopHolding;
@@ -40,6 +43,36 @@ public class TopHoldingTable {
 				}
 			}
 		}
+	}
+
+	public static List<TopHolding> getAll(String tableName) {
+		List<TopHolding> topHoldingList = new ArrayList<>();
+		if (tableName != null) {
+			Connection conn = DbConnection.getConnection();
+			if (conn != null) {
+				try {
+					String sql = "select * from " + tableName + " order by quarter desc";
+					Statement stat = conn.createStatement();
+					ResultSet rs = stat.executeQuery(sql);
+					while (rs.next()) {
+						TopHolding topHolding = new TopHolding();
+						topHolding.setQuarter(rs.getString("quarter"));
+						topHolding.setCode(rs.getString("code"));
+						topHolding.setStockName(rs.getString("stock_name"));
+						topHolding.setInstNumber(rs.getInt("inst_number"));
+						topHolding.setHoldingNumber(rs.getDouble("holding_number"));
+						topHolding.setASharesRatio(rs.getDouble("a_shares_ratio"));
+						topHolding.setHoldingIncrease(rs.getDouble("holding_increase"));
+						topHolding.setHoldingRatio(rs.getDouble("holding_ratio"));
+						topHolding.setPreInstNumber(rs.getInt("pre_inst_number"));
+						topHoldingList.add(topHolding);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return topHoldingList;
 	}
 
 }

@@ -40,4 +40,5 @@ Icon
 .project
 .settings/*
 bin/*
+data/*
 lib/*
