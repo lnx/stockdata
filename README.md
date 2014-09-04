@@ -1,1 +1,1 @@
-Stock data analysis
+Stock data collector
