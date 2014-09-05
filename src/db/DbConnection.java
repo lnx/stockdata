@@ -8,8 +8,9 @@ import util.Log;
 
 public class DbConnection {
 
-	static Connection conn;
+	static final String DB_NAME = "stockdata";
 	static final Object LOCK = new Object();
+	static Connection conn;
 
 	public static Connection getConnection() {
 		if (conn == null) {
@@ -17,8 +18,8 @@ public class DbConnection {
 				if (conn == null) {
 					try {
 						Class.forName("com.mysql.jdbc.Driver");
-						conn = DriverManager.getConnection(
-								"jdbc:mysql://localhost:3306/stockforces?rewriteBatchedStatements=true&characterEncoding=UTF-8", "root", "");
+						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + DB_NAME
+								+ "?rewriteBatchedStatements=true&characterEncoding=UTF-8", "root", "");
 						conn.setAutoCommit(false);
 						Log.info("connect success");
 					} catch (SQLException | ClassNotFoundException e) {

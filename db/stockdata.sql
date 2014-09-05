@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.20, for Win64 (x86_64)
 --
--- Host: localhost    Database: stockforces
+-- Host: localhost    Database: stockdata
 -- ------------------------------------------------------
 -- Server version	5.6.20
 
