@@ -36,7 +36,7 @@ public class TopHoldingParser implements Callable<List<TopHolding>> {
 	}
 
 	public List<TopHolding> call() throws Exception {
-		Document doc = Downloader.download(url);
+		Document doc = Downloader.downloadHtml(url);
 		if (doc != null) {
 			parse(doc);
 		}

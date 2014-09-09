@@ -36,7 +36,7 @@ public class InstHoldingParser implements Callable<List<InstHolding>> {
 	}
 
 	public List<InstHolding> call() throws Exception {
-		Document doc = Downloader.download(url);
+		Document doc = Downloader.downloadHtml(url);
 		if (doc != null) {
 			parse(doc);
 		}

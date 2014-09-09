@@ -14,7 +14,7 @@ public class Downloader {
 	static final int RETRY = 3;
 	static final int SLEEP = 3;
 
-	public static Document download(String url) {
+	public static Document downloadHtml(String url) {
 		if (url != null) {
 			for (int i = 1; i <= RETRY; ++i) {
 				Log.info("download(" + i + ") " + url);
