@@ -1,6 +1,9 @@
-package model;
+package institution.model;
 
-public class TopHolding {
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+public class Heavyweight {
 
 	String quarter;
 	String code;
@@ -85,8 +88,7 @@ public class TopHolding {
 	}
 
 	public String toString() {
-		return quarter + ", " + code + ", " + stockName + ", " + instNumber + ", " + holdingNumber + ", " + aSharesRatio + ", " + holdingIncrease
-				+ ", " + holdingRatio + ", " + preInstNumber;
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
 }

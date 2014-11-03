@@ -1,4 +1,4 @@
-package updater;
+package net;
 
 import java.io.IOException;
 import java.net.SocketTimeoutException;
@@ -19,7 +19,7 @@ public class Downloader {
 			for (int i = 1; i <= RETRY; ++i) {
 				Log.info("download(" + i + ") " + url);
 				try {
-					Document doc = Jsoup.connect(url).maxBodySize(0).get();
+					Document doc = Jsoup.connect(url).maxBodySize(0).ignoreContentType(true).get();
 					if (doc != null) {
 						return doc;
 					}

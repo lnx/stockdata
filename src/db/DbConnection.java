@@ -9,6 +9,9 @@ import util.Log;
 public class DbConnection {
 
 	static final String DB_NAME = "stockdata";
+	static final String USER = "root";
+	static final String PASS = "";
+
 	static final Object LOCK = new Object();
 	static Connection conn;
 
@@ -19,7 +22,7 @@ public class DbConnection {
 					try {
 						Class.forName("com.mysql.jdbc.Driver");
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + DB_NAME
-								+ "?rewriteBatchedStatements=true&characterEncoding=UTF-8", "root", "");
+								+ "?rewriteBatchedStatements=true&characterEncoding=UTF-8", USER, PASS);
 						conn.setAutoCommit(false);
 						Log.info("connect success");
 					} catch (SQLException | ClassNotFoundException e) {

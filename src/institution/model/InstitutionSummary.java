@@ -1,6 +1,9 @@
-package model;
+package institution.model;
 
-public class InstHolding {
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+public class InstitutionSummary {
 
 	String quarter;
 	String code;
@@ -83,10 +86,9 @@ public class InstHolding {
 	public void setASharesRatioIncrease(double aSharesRatioIncrease) {
 		this.aSharesRatioIncrease = aSharesRatioIncrease;
 	}
-
+	
 	public String toString() {
-		return quarter + ", " + code + ", " + stockName + ", " + instNumber + ", " + instNumberIncrease + ", " + holdingRatio + ", "
-				+ holdingRatioIncrease + ", " + aSharesRatio + ", " + aSharesRatioIncrease;
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
 }
